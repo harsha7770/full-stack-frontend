@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
 
 export const api = {
   login: `${BASE_URL}/login`,
@@ -9,4 +9,6 @@ export const api = {
   match: `${BASE_URL}/match`,
   sessions: `${BASE_URL}/sessions`,
   progress: `${BASE_URL}/progress`,
+  forgotPassword: `${BASE_URL}/forgot-password`,
 };
+
