@@ -36,8 +36,7 @@ const MentorList = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      // Always fetch mentors as requested by user
-      const endpoint = api.mentors;
+      const endpoint = role === 'admin' ? api.users : role === 'mentee' ? api.mentors : api.mentees;
       const response = await axios.get(endpoint);
       setUsers(response.data);
       setFilteredUsers(response.data);
@@ -144,10 +143,10 @@ const MentorList = () => {
         <div>
           <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 mb-2 flex items-center gap-2">
             <Users className="h-8 w-8 text-primary" />
-            Find a Mentor
+            {role === 'admin' ? 'User Directory' : role === 'mentee' ? 'Find a Mentor' : 'Available Mentees'}
           </h1>
           <p className="text-textMuted">
-            Browse profiles and establish professional connections to boost your growth.
+            {role === 'admin' ? 'Manage and match users across the platform.' : 'Browse profiles and establish professional connections to boost your growth.'}
           </p>
         </div>
 
