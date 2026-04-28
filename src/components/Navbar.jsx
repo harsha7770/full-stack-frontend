@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Dashboard', path: '/', icon: LayoutDashboard },
-    { name: 'Mentors', path: '/mentors', icon: Users },
+    { name: 'Professional Mentor', path: '/mentors', icon: Users },
     { name: 'Sessions', path: '/sessions', icon: CalendarDays },
     { name: 'Progress', path: '/progress', icon: LineChart },
   ];

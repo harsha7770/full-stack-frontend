@@ -129,7 +129,7 @@ const Home = () => {
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold flex items-center gap-3">
-                  <Users className="h-6 w-6 text-primary" /> Recommended Mentors
+                  <Users className="h-6 w-6 text-primary" /> Recommended Professional Mentor
                 </h2>
                 <Link to="/mentors" className="text-xs text-primary font-bold hover:underline">View All Network</Link>
               </div>
