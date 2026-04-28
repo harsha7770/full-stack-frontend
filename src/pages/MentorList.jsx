@@ -36,10 +36,31 @@ const MentorList = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const endpoint = role === 'admin' ? api.users : role === 'mentee' ? api.mentors : api.mentees;
-      const response = await axios.get(endpoint);
-      setUsers(response.data);
-      setFilteredUsers(response.data);
+      // Hardcoded as requested to instantly reflect on Netlify
+      const hardcodedMentors = [
+        {
+          id: 901,
+          name: "Hitesh",
+          email: "hitesh@example.com",
+          role: "mentor",
+          expertise: ["Frontend Development", "React", "UI/UX"],
+          bio: "Frontend expert and educator.",
+          experience: 5,
+          hourlyRate: 50
+        },
+        {
+          id: 902,
+          name: "Pav Kohli",
+          email: "pav@example.com",
+          role: "mentor",
+          expertise: ["Backend Development", "System Design", "Java"],
+          bio: "Backend architecture guru.",
+          experience: 8,
+          hourlyRate: 80
+        }
+      ];
+      setUsers(hardcodedMentors);
+      setFilteredUsers(hardcodedMentors);
     } catch (err) {
       console.error(err);
     } finally {
